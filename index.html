@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIT GT - Centro de Acondicionamiento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">FIT<span>.GT</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+      <nav class="nav-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#programas">Programas</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto" class="btn btn-nav">Únete Ahora</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <section id="inicio" class="hero">
+    <div class="container hero-content">
+      <h1>TRANSFORMA TU <span>ESTILO DE VIDA</span></h1>
+      <p>Entrenamiento de alto rendimiento, comunidad y resultados reales en Guatemala.</p>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn btn-primary">Empieza Hoy</a>
+        <a href="#programas" class="btn btn-secondary">Ver Programas</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="programas" class="section">
+    <div class="container">
+      <h2 class="section-title">NUESTROS <span>PROGRAMAS</span></h2>
+      <div class="grid cards-grid">
+        <div class="card">
+          <h3>Cross Training</h3>
+          <p>Entrenamiento funcional de alta intensidad adaptado a todos los niveles de condición física.</p>
+        </div>
+        <div class="card">
+          <h3>Fuerza & Acondicionamiento</h3>
+          <p>Desarrolla potencia, masa muscular y resistencia con programación estructurada.</p>
+        </div>
+        <div class="card">
+          <h3>Coaching Personalizado</h3>
+          <p>Planes de entrenamiento y guía nutricional 1 a 1 enfocados en tus metas específicas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title text-left">SOBRE <span>NOSOTROS</span></h2>
+          <p>En <strong>FIT.GT</strong> somos más que un centro de entrenamiento; somos una comunidad apasionada por la salud, la disciplina y la superación personal en Guatemala.</p>
+          <p>Nuestro enfoque combina metodología avanzada, entrenadores certificados y un ambiente motivador para ayudarte a alcanzar tus metas físicas de manera constante y segura.</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3>+5</h3>
+              <p>Años de experiencia</p>
+            </div>
+            <div class="stat-item">
+              <h3>+1000</h3>
+              <p>Atletas guiados</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Compromiso</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Instalaciones de FIT GT">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section bg-dark">
+    <div class="container">
+      <h2 class="section-title">¿LISTO PARA EL <span>CAMBIO</span>?</h2>
+      <form id="form-contacto" class="contact-form">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="tel" id="telefono" placeholder="Teléfono" required>
+        <button type="submit" class="btn btn-primary">Solicitar Información</button>
+      </form>
+      <p id="mensaje-exito" class="mensaje-exito"></p>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 FIT.GT - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  const contactForm = document.getElementById('form-contacto');
+  const mensajeExito = document.getElementById('mensaje-exito');
+
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navToggle.checked) {
+        navToggle.checked = false;
+      }
+    });
+  });
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+
+      mensajeExito.textContent = `¡Gracias, ${nombre}! Nos pondremos en contacto contigo pronto.`;
+      contactForm.reset();
+
+      setTimeout(() => {
+        mensajeExito.textContent = '';
+      }, 5000);
+    });
+  }
+});
+  </script>
+</body>
+</html>
