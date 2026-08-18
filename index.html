@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+  
   <header class="header">
     <div class="container nav-container">
       <a href="#" class="logo">FIT<span>.GT</span></a>
@@ -19,6 +19,7 @@
       <nav class="nav-menu">
         <a href="#inicio">Inicio</a>
         <a href="#programas">Programas</a>
+        <a href="#productos">Productos</a> <!-- Nuevo enlace agregado -->
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto" class="btn btn-nav">Únete Ahora</a>
       </nav>
@@ -37,7 +38,7 @@
     </div>
   </section>
 
-
+ 
   <section id="programas" class="section">
     <div class="container">
       <h2 class="section-title">NUESTROS <span>PROGRAMAS</span></h2>
@@ -58,6 +59,46 @@
     </div>
   </section>
 
+
+  <section id="productos" class="section bg-dark">
+    <div class="container">
+      <h2 class="section-title">NUESTROS <span>PRODUCTOS</span></h2>
+      <div class="grid cards-grid">
+       
+        <div class="card">
+          <h3>Proteína Whey</h3>
+          <p>Acelera tu recuperación muscular con nuestra proteína de rápida absorción tras cada entrenamiento.</p>
+        </div>
+       
+        <div class="card">
+          <h3>Creatina Monohidratada</h3>
+          <p>Aumenta tu fuerza, potencia y rendimiento en tus rutinas más exigentes.</p>
+        </div>
+      
+        <div class="card">
+          <h3>Pre-Entreno</h3>
+          <p>Energía explosiva y máximo enfoque mental para darlo todo en el gimnasio.</p>
+        </div>
+       
+        <div class="card">
+          <h3>Aminoácidos BCAA</h3>
+          <p>Protege tu masa muscular del desgaste y mantente hidratado mientras te ejercitas.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Camiseta FIT.GT</h3>
+          <p>Ropa deportiva ligera y transpirable, diseñada para brindarte total comodidad y movilidad.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Shaker Profesional</h3>
+          <p>Mezclador antiderrame con compartimento extra, ideal para llevar tus suplementos sin grumos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
   <section id="nosotros" class="section">
     <div class="container">
       <div class="about-grid">
@@ -87,57 +128,25 @@
     </div>
   </section>
 
+
   <section id="contacto" class="section bg-dark">
     <div class="container">
       <h2 class="section-title">¿LISTO PARA EL <span>CAMBIO</span>?</h2>
-      <form id="form-contacto" class="contact-form">
-        <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="email" id="email" placeholder="Correo electrónico" required>
-        <input type="tel" id="telefono" placeholder="Teléfono" required>
+      <form class="contact-form" onsubmit="event.preventDefault();">
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="tel" placeholder="Teléfono" required>
         <button type="submit" class="btn btn-primary">Solicitar Información</button>
       </form>
-      <p id="mensaje-exito" class="mensaje-exito"></p>
     </div>
   </section>
 
-  
+ 
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 FIT.GT - Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  const contactForm = document.getElementById('form-contacto');
-  const mensajeExito = document.getElementById('mensaje-exito');
-
-  
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (navToggle.checked) {
-        navToggle.checked = false;
-      }
-    });
-  });
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value;
-
-      mensajeExito.textContent = `¡Gracias, ${nombre}! Nos pondremos en contacto contigo pronto.`;
-      contactForm.reset();
-
-      setTimeout(() => {
-        mensajeExito.textContent = '';
-      }, 5000);
-    });
-  }
-});
-  </script>
 </body>
 </html>
