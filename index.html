@@ -19,14 +19,14 @@
       <nav class="nav-menu">
         <a href="#inicio">Inicio</a>
         <a href="#programas">Programas</a>
-        <a href="#productos">Productos</a> <!-- Nuevo enlace agregado -->
+        <a href="#productos">Productos</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto" class="btn btn-nav">Únete Ahora</a>
       </nav>
     </div>
   </header>
 
-
+  
   <section id="inicio" class="hero">
     <div class="container hero-content">
       <h1>TRANSFORMA TU <span>ESTILO DE VIDA</span></h1>
@@ -38,7 +38,6 @@
     </div>
   </section>
 
- 
   <section id="programas" class="section">
     <div class="container">
       <h2 class="section-title">NUESTROS <span>PROGRAMAS</span></h2>
@@ -64,12 +63,13 @@
     <div class="container">
       <h2 class="section-title">NUESTROS <span>PRODUCTOS</span></h2>
       <div class="grid cards-grid">
-       
+        
         <div class="card">
+          <img src="https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=500&q=80" alt="Proteína Whey" class="product-img">
           <h3>Proteína Whey</h3>
           <p>Acelera tu recuperación muscular con nuestra proteína de rápida absorción tras cada entrenamiento.</p>
         </div>
-       
+
         <div class="card">
           <h3>Creatina Monohidratada</h3>
           <p>Aumenta tu fuerza, potencia y rendimiento en tus rutinas más exigentes.</p>
@@ -148,5 +148,52 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      const contactForm = document.getElementById('form-contacto');
+      const mensajeExito = document.getElementById('mensaje-exito');
+
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navToggle && navToggle.checked) {
+            navToggle.checked = false;
+          }
+        });
+      });
+
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nombre = document.getElementById('nombre').value;
+
+          mensajeExito.textContent = `¡Gracias, ${nombre}! Nos pondremos en contacto contigo pronto.`;
+          contactForm.reset();
+
+          setTimeout(() => {
+            mensajeExito.textContent = '';
+          }, 5000);
+        });
+      }
+
+     
+      const productCards = document.querySelectorAll('#productos .card');
+      productCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          const producto = card.querySelector('h3').textContent;
+          const contactoSection = document.getElementById('contacto');
+          if (contactoSection) {
+            contactoSection.scrollIntoView({ behavior: 'smooth' });
+            const inputNombre = document.getElementById('nombre');
+            if (inputNombre) inputNombre.focus();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
