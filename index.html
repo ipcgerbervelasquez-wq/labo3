@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  
   <header class="header">
     <div class="container nav-container">
       <a href="#" class="logo">FIT<span>.GT</span></a>
@@ -58,7 +57,6 @@
     </div>
   </section>
 
-
   <section id="productos" class="section bg-dark">
     <div class="container">
       <h2 class="section-title">NUESTROS <span>PRODUCTOS</span></h2>
@@ -71,34 +69,40 @@
         </div>
 
         <div class="card">
+          <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=500&q=80" alt="Creatina Monohidratada" class="product-img">
           <h3>Creatina Monohidratada</h3>
           <p>Aumenta tu fuerza, potencia y rendimiento en tus rutinas más exigentes.</p>
         </div>
-      
+
         <div class="card">
+          <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=500&q=80" alt="Pre-Entreno" class="product-img">
           <h3>Pre-Entreno</h3>
           <p>Energía explosiva y máximo enfoque mental para darlo todo en el gimnasio.</p>
         </div>
-       
+
         <div class="card">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=500&q=80" alt="Aminoácidos BCAA" class="product-img">
           <h3>Aminoácidos BCAA</h3>
           <p>Protege tu masa muscular del desgaste y mantente hidratado mientras te ejercitas.</p>
         </div>
-        
+
         <div class="card">
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" alt="Camiseta FIT.GT" class="product-img">
           <h3>Camiseta FIT.GT</h3>
           <p>Ropa deportiva ligera y transpirable, diseñada para brindarte total comodidad y movilidad.</p>
         </div>
-        
+
         <div class="card">
+          <img src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?auto=format&fit=crop&w=500&q=80" alt="Shaker Profesional" class="product-img">
           <h3>Shaker Profesional</h3>
           <p>Mezclador antiderrame con compartimento extra, ideal para llevar tus suplementos sin grumos.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  
+ 
   <section id="nosotros" class="section">
     <div class="container">
       <div class="about-grid">
@@ -132,16 +136,16 @@
   <section id="contacto" class="section bg-dark">
     <div class="container">
       <h2 class="section-title">¿LISTO PARA EL <span>CAMBIO</span>?</h2>
-      <form class="contact-form" onsubmit="event.preventDefault();">
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <input type="tel" placeholder="Teléfono" required>
+      <form id="form-contacto" class="contact-form">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="tel" id="telefono" placeholder="Teléfono" required>
         <button type="submit" class="btn btn-primary">Solicitar Información</button>
       </form>
+      <p id="mensaje-exito" class="mensaje-exito"></p>
     </div>
   </section>
 
- 
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 FIT.GT - Todos los derechos reservados.</p>
